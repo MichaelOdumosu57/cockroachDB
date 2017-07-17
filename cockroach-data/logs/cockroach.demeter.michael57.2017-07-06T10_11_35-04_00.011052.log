@@ -1,0 +1,135 @@
+I170706 10:11:35.512079 1 util/log/clog.go:1011  [config] file created at: 2017/07/06 10:11:35
+I170706 10:11:35.512079 1 util/log/clog.go:1011  [config] running on machine: demeter
+I170706 10:11:35.512079 1 util/log/clog.go:1011  [config] binary: CockroachDB CCL v1.0.2 (linux amd64, built 2017/06/15 12:58:59, go1.8.3)
+I170706 10:11:35.512079 1 util/log/clog.go:1011  [config] arguments: [cockroach start --insecure --host=0.0.0.0]
+I170706 10:11:35.512079 1 util/log/clog.go:1011  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+W170706 10:11:35.512078 1 cli/start.go:587  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access 0.0.0.0.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/secure-a-cluster.html
+I170706 10:11:35.512433 1 cli/start.go:593  CockroachDB CCL v1.0.2 (linux amd64, built 2017/06/15 12:58:59, go1.8.3)
+I170706 10:11:35.612799 1 server/config.go:281  available memory from cgroups (8.0 EiB) exceeds system memory 16 GiB, using system memory
+I170706 10:11:35.612811 1 server/config.go:375  system total memory: 16 GiB
+I170706 10:11:35.612868 1 server/config.go:377  server configuration:
+max offset                   500ms
+cache size                   3.9 GiB
+SQL memory pool size         3.9 GiB
+scan interval                10m0s
+scan max idle time           200ms
+consistency check interval   24h0m0s
+metrics sample interval      10s
+time until store dead        5m0s
+send next timeout            500ms
+event log enabled            true
+linearizable                 false
+I170706 10:11:35.612944 19 cli/start.go:340  starting cockroach node
+I170706 10:11:35.615590 19 storage/engine/rocksdb.go:380  opening rocksdb instance at "/home/michael57/My_Computer/cockroach/cockroach-data"
+I170706 10:11:35.847902 19 server/config.go:475  [n?] 1 storage engine initialized
+I170706 10:11:35.847932 19 server/config.go:477  [n?] RocksDB cache size: 3.9 GiB
+I170706 10:11:35.847944 19 server/config.go:477  [n?] store 0: RocksDB, max size 0 B, max open file limit -1
+I170706 10:11:35.848201 19 server/server.go:672  [n?] sleeping for 266.81924ms to guarantee HLC monotonicity
+I170706 10:11:36.118272 19 storage/store.go:1252  [n1] [n1,s1]: failed initial metrics computation: [n1,s1]: system config not yet available
+I170706 10:11:36.118313 19 server/node.go:467  [n1] initialized store [n1,s1]: {Capacity:238862172160 Available:11519852544 RangeCount:13 LeaseCount:0}
+I170706 10:11:36.118338 19 server/node.go:351  [n1] node ID 1 initialized
+W170706 10:11:36.118436 80 storage/store.go:1339  [n1,s1,r5/1:/Table/{0-11}] could not gossip system config: [NotLeaseHolderError] r5: replica (n1,s1):1 not lease holder; lease holder unknown
+I170706 10:11:36.118448 19 gossip/gossip.go:297  [n1] NodeDescriptor set to node_id:1 address:<network_field:"tcp" address_field:"0.0.0.0:26257" > attrs:<> locality:<> 
+I170706 10:11:36.118816 19 storage/stores.go:296  [n1] read 2 node addresses from persistent storage
+I170706 10:11:36.126124 19 server/node.go:608  [n1] connecting to gossip network to verify cluster ID...
+I170706 10:11:36.126150 19 server/node.go:633  [n1] node connected via gossip and verified as part of cluster "e00f8e37-6ee8-4cf6-8e1c-262451d953ba"
+I170706 10:11:36.126193 19 server/node.go:405  [n1] node=1: started with [[]=/home/michael57/My_Computer/cockroach/cockroach-data] engine(s) and attributes []
+I170706 10:11:36.126291 19 sql/executor.go:338  [n1] creating distSQLPlanner with address {tcp 0.0.0.0:26257}
+W170706 10:11:36.133370 80 storage/store.go:1339  [n1,s1,r5/1:/Table/{0-11}] could not gossip system config: [NotLeaseHolderError] r5: replica (n1,s1):1 not lease holder; lease holder unknown
+I170706 10:11:36.135539 19 server/server.go:735  [n1] starting http server at 0.0.0.0:8080
+I170706 10:11:36.135553 19 server/server.go:736  [n1] starting grpc/postgres server at 0.0.0.0:26257
+I170706 10:11:36.135565 19 server/server.go:737  [n1] advertising CockroachDB node at 0.0.0.0:26257
+I170706 10:11:36.136779 19 server/server.go:847  [n1] done ensuring all necessary migrations have run
+I170706 10:11:36.136812 19 server/server.go:849  [n1] serving sql connections
+I170706 10:11:36.136982 19 cli/start.go:411  node startup completed:
+CockroachDB node starting at 2017-07-06 10:11:36.136905897 -0400 EDT
+build:      CCL v1.0.2 @ 2017/06/15 12:58:59 (go1.8.3)
+admin:      http://0.0.0.0:8080
+sql:        postgresql://root@0.0.0.0:26257?sslmode=disable
+logs:       /home/michael57/My_Computer/cockroach/cockroach-data/logs
+store[0]:   path=/home/michael57/My_Computer/cockroach/cockroach-data
+status:     restarted pre-existing node
+clusterID:  e00f8e37-6ee8-4cf6-8e1c-262451d953ba
+nodeID:     1
+I170706 10:11:36.181360 48 storage/replica_proposal.go:390  [n1,s1,r5/1:/Table/{0-11}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499350296.137652637,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298308.159189344,0
+I170706 10:11:36.181389 45 storage/replica_proposal.go:390  [n1,s1,r3/1:/System/ts{d-e}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499350296.144096383,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298308.475807450,0
+I170706 10:11:36.222068 46 storage/replica_proposal.go:390  [n1,s1,r5/1:/Table/{0-11}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350296.181571313,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499350296.137652637,0
+I170706 10:11:36.222099 55 storage/replica_proposal.go:390  [n1,s1,r3/1:/System/ts{d-e}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350296.181583310,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499350296.144096383,0
+I170706 10:11:36.260599 51 storage/replica_proposal.go:390  [n1,s1,r7/1:/Table/1{2-3}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350296.223201610,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298308.199522271,0
+I170706 10:11:36.281251 110 sql/event_log.go:101  [n1] Event: "node_restart", target: 1, info: {Descriptor:{NodeID:1 Address:{NetworkField:tcp AddressField:0.0.0.0:26257} Attrs: Locality:} ClusterID:e00f8e37-6ee8-4cf6-8e1c-262451d953ba StartedAt:1499350296126152213 LastUp:1499317943149762166}
+I170706 10:11:36.347884 70 storage/replica_proposal.go:390  [n1,s1,r22/1:/Table/5{1-2}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350296.318799279,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298309.481207103,0
+I170706 10:11:36.616110 200 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26259: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26259 <nil>}
+W170706 10:11:36.616177 198 gossip/client.go:125  [n1] failed to start gossip client to 0.0.0.0:26259: rpc error: code = Unavailable desc = grpc: the connection is unavailable
+I170706 10:11:36.742367 64 storage/replica_proposal.go:390  [n1,s1,r21/1:/Table/5{0-1}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350296.719794193,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298309.481207103,0
+I170706 10:11:36.943308 46 storage/replica_proposal.go:390  [n1,s1,r10/1:/Table/{15-50}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350296.920489725,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298309.481207103,0
+I170706 10:11:37.139893 71 storage/replica_proposal.go:390  [n1,s1,r23/1:/{Table/52-Max}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350297.121268509,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298309.481207103,0
+I170706 10:11:37.564898 63 storage/replica_proposal.go:390  [n1,s1,r6/1:/Table/1{1-2}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350297.523181391,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298308.878666575,0
+I170706 10:11:37.616513 221 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26258: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26258 <nil>}
+W170706 10:11:37.616631 219 gossip/client.go:125  [n1] failed to start gossip client to 0.0.0.0:26258: rpc error: code = Unavailable desc = grpc: the connection is unavailable
+I170706 10:11:37.751136 52 storage/replica_proposal.go:390  [n1,s1,r9/1:/Table/1{4-5}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350297.724304126,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298308.477180560,0
+I170706 10:11:38.169935 71 storage/replica_proposal.go:390  [n1,s1,r4/1:/{System/tse-Table/0}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350298.125978319,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298308.276581376,0
+I170706 10:11:38.760456 68 storage/replica_proposal.go:390  [n1,s1,r8/1:/Table/1{3-4}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=5 pro=1499350298.728676652,0 following repl=(n1,s1):1 start=0.000000000,0 epo=4 pro=1499298308.677897472,0
+I170706 10:11:46.127245 115 storage/store.go:3997  [n1,s1] sstables (read amplification = 1):
+6 [ 3M 1 ]: 3M
+I170706 10:11:46.127753 117 server/status/runtime.go:225  [n1] runtime stats: 88 MiB RSS, 127 goroutines, 14 MiB/312 KiB/22 MiB GO alloc/idle/total, 6.4 MiB/11 MiB CGO alloc/total, 0.00cgo/sec, 0.00/0.00 %(u/s)time, 0.00 %gc (6x)
+I170706 10:11:56.127549 117 server/status/runtime.go:225  [n1] runtime stats: 90 MiB RSS, 127 goroutines, 13 MiB/3.2 MiB/24 MiB GO alloc/idle/total, 6.6 MiB/12 MiB CGO alloc/total, 59.20cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:12:06.127540 117 server/status/runtime.go:225  [n1] runtime stats: 91 MiB RSS, 127 goroutines, 11 MiB/5.9 MiB/25 MiB GO alloc/idle/total, 6.9 MiB/12 MiB CGO alloc/total, 62.50cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:12:16.127682 117 server/status/runtime.go:225  [n1] runtime stats: 110 MiB RSS, 132 goroutines, 17 MiB/13 MiB/38 MiB GO alloc/idle/total, 8.4 MiB/14 MiB CGO alloc/total, 80.30cgo/sec, 0.09/0.00 %(u/s)time, 0.00 %gc (3x)
+I170706 10:12:26.127629 117 server/status/runtime.go:225  [n1] runtime stats: 114 MiB RSS, 132 goroutines, 16 MiB/15 MiB/38 MiB GO alloc/idle/total, 8.7 MiB/14 MiB CGO alloc/total, 85.90cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:12:36.126676 116 gossip/gossip.go:448  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I170706 10:12:36.127521 117 server/status/runtime.go:225  [n1] runtime stats: 114 MiB RSS, 134 goroutines, 16 MiB/15 MiB/38 MiB GO alloc/idle/total, 8.7 MiB/15 MiB CGO alloc/total, 90.70cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:12:36.768206 200 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26259: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26259 <nil>}
+I170706 10:12:38.107293 221 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26258: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26258 <nil>}
+I170706 10:12:46.127102 117 server/status/runtime.go:225  [n1] runtime stats: 115 MiB RSS, 132 goroutines, 14 MiB/17 MiB/38 MiB GO alloc/idle/total, 9.2 MiB/16 MiB CGO alloc/total, 114.70cgo/sec, 0.03/0.01 %(u/s)time, 0.00 %gc (2x)
+I170706 10:12:56.127485 117 server/status/runtime.go:225  [n1] runtime stats: 117 MiB RSS, 132 goroutines, 14 MiB/16 MiB/38 MiB GO alloc/idle/total, 9.9 MiB/17 MiB CGO alloc/total, 77.20cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:13:06.127717 117 server/status/runtime.go:225  [n1] runtime stats: 117 MiB RSS, 132 goroutines, 14 MiB/16 MiB/38 MiB GO alloc/idle/total, 9.8 MiB/17 MiB CGO alloc/total, 116.40cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:13:16.127650 117 server/status/runtime.go:225  [n1] runtime stats: 118 MiB RSS, 132 goroutines, 14 MiB/16 MiB/38 MiB GO alloc/idle/total, 9.5 MiB/17 MiB CGO alloc/total, 68.50cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:13:26.127418 117 server/status/runtime.go:225  [n1] runtime stats: 118 MiB RSS, 132 goroutines, 14 MiB/16 MiB/38 MiB GO alloc/idle/total, 9.4 MiB/17 MiB CGO alloc/total, 112.50cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I170706 10:13:36.127467 116 gossip/gossip.go:448  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I170706 10:13:36.128459 117 server/status/runtime.go:225  [n1] runtime stats: 118 MiB RSS, 134 goroutines, 14 MiB/16 MiB/38 MiB GO alloc/idle/total, 9.0 MiB/18 MiB CGO alloc/total, 78.59cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:13:37.251999 200 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26259: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26259 <nil>}
+I170706 10:13:38.823053 221 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26258: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26258 <nil>}
+I170706 10:13:46.127560 117 server/status/runtime.go:225  [n1] runtime stats: 119 MiB RSS, 133 goroutines, 17 MiB/13 MiB/38 MiB GO alloc/idle/total, 8.6 MiB/18 MiB CGO alloc/total, 124.91cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I170706 10:13:56.127757 117 server/status/runtime.go:225  [n1] runtime stats: 119 MiB RSS, 133 goroutines, 11 MiB/18 MiB/38 MiB GO alloc/idle/total, 8.4 MiB/18 MiB CGO alloc/total, 126.50cgo/sec, 0.03/0.00 %(u/s)time, 0.00 %gc (2x)
+I170706 10:14:06.127724 117 server/status/runtime.go:225  [n1] runtime stats: 121 MiB RSS, 133 goroutines, 13 MiB/17 MiB/38 MiB GO alloc/idle/total, 9.3 MiB/19 MiB CGO alloc/total, 122.70cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I170706 10:14:16.127056 117 server/status/runtime.go:225  [n1] runtime stats: 123 MiB RSS, 133 goroutines, 15 MiB/15 MiB/38 MiB GO alloc/idle/total, 9.4 MiB/19 MiB CGO alloc/total, 119.11cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:14:26.127776 117 server/status/runtime.go:225  [n1] runtime stats: 123 MiB RSS, 133 goroutines, 16 MiB/14 MiB/38 MiB GO alloc/idle/total, 9.1 MiB/19 MiB CGO alloc/total, 122.39cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:14:36.126820 116 gossip/gossip.go:448  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I170706 10:14:36.127519 117 server/status/runtime.go:225  [n1] runtime stats: 123 MiB RSS, 134 goroutines, 18 MiB/12 MiB/38 MiB GO alloc/idle/total, 8.8 MiB/20 MiB CGO alloc/total, 118.90cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:14:38.290289 200 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26259: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26259 <nil>}
+I170706 10:14:38.893189 221 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26258: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26258 <nil>}
+I170706 10:14:46.127357 117 server/status/runtime.go:225  [n1] runtime stats: 123 MiB RSS, 133 goroutines, 18 MiB/12 MiB/38 MiB GO alloc/idle/total, 8.4 MiB/20 MiB CGO alloc/total, 129.10cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I170706 10:14:56.126809 117 server/status/runtime.go:225  [n1] runtime stats: 123 MiB RSS, 133 goroutines, 12 MiB/18 MiB/38 MiB GO alloc/idle/total, 8.4 MiB/20 MiB CGO alloc/total, 122.70cgo/sec, 0.03/0.00 %(u/s)time, 0.00 %gc (2x)
+I170706 10:15:06.126671 117 server/status/runtime.go:225  [n1] runtime stats: 123 MiB RSS, 133 goroutines, 20 MiB/10 MiB/38 MiB GO alloc/idle/total, 8.2 MiB/20 MiB CGO alloc/total, 105.60cgo/sec, 0.01/0.01 %(u/s)time, 0.00 %gc (0x)
+I170706 10:15:16.127618 117 server/status/runtime.go:225  [n1] runtime stats: 123 MiB RSS, 133 goroutines, 17 MiB/13 MiB/38 MiB GO alloc/idle/total, 8.2 MiB/20 MiB CGO alloc/total, 114.19cgo/sec, 0.01/0.01 %(u/s)time, 0.00 %gc (1x)
+I170706 10:15:26.127651 117 server/status/runtime.go:225  [n1] runtime stats: 125 MiB RSS, 133 goroutines, 18 MiB/13 MiB/38 MiB GO alloc/idle/total, 8.8 MiB/21 MiB CGO alloc/total, 126.50cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I170706 10:15:36.126626 116 gossip/gossip.go:448  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I170706 10:15:36.127397 117 server/status/runtime.go:225  [n1] runtime stats: 125 MiB RSS, 134 goroutines, 17 MiB/13 MiB/38 MiB GO alloc/idle/total, 8.9 MiB/21 MiB CGO alloc/total, 122.20cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I170706 10:15:38.628838 200 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26259: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26259 <nil>}
+I170706 10:15:39.487493 221 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26258: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26258 <nil>}
+I170706 10:15:46.127788 117 server/status/runtime.go:225  [n1] runtime stats: 129 MiB RSS, 133 goroutines, 17 MiB/13 MiB/38 MiB GO alloc/idle/total, 9.1 MiB/21 MiB CGO alloc/total, 121.70cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:15:56.127471 117 server/status/runtime.go:225  [n1] runtime stats: 129 MiB RSS, 133 goroutines, 17 MiB/14 MiB/38 MiB GO alloc/idle/total, 8.9 MiB/21 MiB CGO alloc/total, 122.70cgo/sec, 0.03/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:16:06.127328 117 server/status/runtime.go:225  [n1] runtime stats: 129 MiB RSS, 132 goroutines, 18 MiB/12 MiB/38 MiB GO alloc/idle/total, 8.9 MiB/21 MiB CGO alloc/total, 102.10cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I170706 10:16:16.127018 117 server/status/runtime.go:225  [n1] runtime stats: 129 MiB RSS, 132 goroutines, 17 MiB/13 MiB/38 MiB GO alloc/idle/total, 8.8 MiB/21 MiB CGO alloc/total, 85.90cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170706 10:16:21.855638 1 cli/start.go:446  received signal 'terminated'
+I170706 10:16:21.873145 1 cli/start.go:471  initiating graceful shutdown of server
+I170706 10:16:21.925815 221 vendor/google.golang.org/grpc/clientconn.go:597  Failed to dial 0.0.0.0:26258: context canceled; please retry.
+I170706 10:16:21.940141 30 vendor/google.golang.org/grpc/transport/http2_server.go:323  transport: http2Server.HandleStreams failed to read frame: read tcp 127.0.0.1:26257->127.0.0.1:54000: use of closed network connection
+I170706 10:16:21.947789 200 vendor/google.golang.org/grpc/clientconn.go:597  Failed to dial 0.0.0.0:26259: context canceled; please retry.
+I170706 10:16:21.958384 3245 storage/engine/rocksdb.go:447  closing rocksdb instance at "/home/michael57/My_Computer/cockroach/cockroach-data"
+I170706 10:16:21.978179 1 cli/start.go:503  server drained and shutdown completed

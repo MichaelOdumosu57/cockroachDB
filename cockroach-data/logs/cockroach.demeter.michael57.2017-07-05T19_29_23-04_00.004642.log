@@ -1,0 +1,138 @@
+I170705 19:29:23.569707 1 util/log/clog.go:1011  [config] file created at: 2017/07/05 19:29:23
+I170705 19:29:23.569707 1 util/log/clog.go:1011  [config] running on machine: demeter
+I170705 19:29:23.569707 1 util/log/clog.go:1011  [config] binary: CockroachDB CCL v1.0.2 (linux amd64, built 2017/06/15 12:58:59, go1.8.3)
+I170705 19:29:23.569707 1 util/log/clog.go:1011  [config] arguments: [cockroach start --insecure --host=localhost]
+I170705 19:29:23.569707 1 util/log/clog.go:1011  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+W170705 19:29:23.569707 1 cli/start.go:587  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access localhost.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/secure-a-cluster.html
+I170705 19:29:23.569922 1 cli/start.go:593  CockroachDB CCL v1.0.2 (linux amd64, built 2017/06/15 12:58:59, go1.8.3)
+I170705 19:29:23.670301 1 server/config.go:281  available memory from cgroups (8.0 EiB) exceeds system memory 16 GiB, using system memory
+I170705 19:29:23.670319 1 server/config.go:375  system total memory: 16 GiB
+I170705 19:29:23.670381 1 server/config.go:377  server configuration:
+max offset                   500ms
+cache size                   3.9 GiB
+SQL memory pool size         3.9 GiB
+scan interval                10m0s
+scan max idle time           200ms
+consistency check interval   24h0m0s
+metrics sample interval      10s
+time until store dead        5m0s
+send next timeout            500ms
+event log enabled            true
+linearizable                 false
+I170705 19:29:23.670481 14 cli/start.go:340  starting cockroach node
+I170705 19:29:23.673957 14 storage/engine/rocksdb.go:380  opening rocksdb instance at "/home/michael57/My_Computer/cockroach-data"
+I170705 19:29:23.752613 14 server/config.go:475  [n?] 1 storage engine initialized
+I170705 19:29:23.752628 14 server/config.go:477  [n?] RocksDB cache size: 3.9 GiB
+I170705 19:29:23.752637 14 server/config.go:477  [n?] store 0: RocksDB, max size 0 B, max open file limit -1
+I170705 19:29:23.752972 14 server/node.go:454  [n?] store [n0,s0] not bootstrapped
+I170705 19:29:23.804693 14 server/node.go:389  [n?] **** cluster e00f8e37-6ee8-4cf6-8e1c-262451d953ba has been created
+I170705 19:29:23.804707 14 server/node.go:390  [n?] **** add additional nodes by specifying --join=localhost:26257
+I170705 19:29:23.805138 14 storage/store.go:1252  [n1] [n1,s1]: failed initial metrics computation: [n1,s1]: system config not yet available
+I170705 19:29:23.805170 14 server/node.go:467  [n1] initialized store [n1,s1]: {Capacity:238862172160 Available:11510398976 RangeCount:1 LeaseCount:0}
+I170705 19:29:23.805196 14 server/node.go:351  [n1] node ID 1 initialized
+I170705 19:29:23.805302 14 gossip/gossip.go:297  [n1] NodeDescriptor set to node_id:1 address:<network_field:"tcp" address_field:"localhost:26257" > attrs:<> locality:<> 
+I170705 19:29:23.805384 14 storage/stores.go:296  [n1] read 0 node addresses from persistent storage
+I170705 19:29:23.805457 14 server/node.go:608  [n1] connecting to gossip network to verify cluster ID...
+I170705 19:29:23.805478 14 server/node.go:633  [n1] node connected via gossip and verified as part of cluster "e00f8e37-6ee8-4cf6-8e1c-262451d953ba"
+I170705 19:29:23.805502 14 server/node.go:405  [n1] node=1: started with [[]=/home/michael57/My_Computer/cockroach-data] engine(s) and attributes []
+I170705 19:29:23.805576 14 sql/executor.go:338  [n1] creating distSQLPlanner with address {tcp localhost:26257}
+I170705 19:29:23.810918 14 server/server.go:735  [n1] starting http server at localhost:8080
+I170705 19:29:23.810932 14 server/server.go:736  [n1] starting grpc/postgres server at localhost:26257
+I170705 19:29:23.810949 14 server/server.go:737  [n1] advertising CockroachDB node at localhost:26257
+I170705 19:29:23.813687 140 storage/split_queue.go:93  [split,n1,s1,r1/1:/M{in-ax}] splitting at key /System/""
+I170705 19:29:23.827123 140 storage/replica_command.go:2660  [split,n1,s1,r1/1:/M{in-ax}] initiating a split of this range at key /System/"" [r2]
+E170705 19:29:23.915545 118 storage/replica_proposal.go:463  [n1,s1,r1/1:/M{in-ax}] could not load SystemConfig span: must retry later due to intent on SystemConfigSpan
+I170705 19:29:23.916001 140 storage/split_queue.go:93  [split,n1,s1,r2/1:/{System/-Max}] splitting at key /System/tsd
+I170705 19:29:23.916021 140 storage/replica_command.go:2660  [split,n1,s1,r2/1:/{System/-Max}] initiating a split of this range at key /System/tsd [r3]
+I170705 19:29:23.975320 14 sql/event_log.go:101  [n1] Event: "alter_table", target: 12, info: {TableName:eventlog Statement:ALTER TABLE system.eventlog ALTER COLUMN uniqueid SET DEFAULT uuid_v4() User:node MutationID:0 CascadeDroppedViews:[]}
+I170705 19:29:24.019909 140 storage/split_queue.go:93  [split,n1,s1,r3/1:/{System/tsd-Max}] splitting at key /System/"tse"
+I170705 19:29:24.019968 140 storage/replica_command.go:2660  [split,n1,s1,r3/1:/{System/tsd-Max}] initiating a split of this range at key /System/"tse" [r4]
+I170705 19:29:24.111081 14 sql/lease.go:372  [n1] publish: descID=12 (eventlog) version=2 mtime=2017-07-05 19:29:24.111045652 -0400 EDT
+E170705 19:29:24.182961 101 storage/replica_proposal.go:463  [n1,s1,r3/1:/{System/tsd-Max}] could not load SystemConfig span: must retry later due to intent on SystemConfigSpan
+I170705 19:29:24.183495 140 storage/split_queue.go:93  [split,n1,s1,r4/1:/{System/tse-Max}] splitting at key /Table/0/0
+I170705 19:29:24.183510 140 storage/replica_command.go:2660  [split,n1,s1,r4/1:/{System/tse-Max}] initiating a split of this range at key /Table/0 [r5]
+I170705 19:29:24.378681 140 storage/split_queue.go:93  [split,n1,s1,r5/1:/{Table/0-Max}] splitting at key /Table/11/0
+I170705 19:29:24.378711 140 storage/replica_command.go:2660  [split,n1,s1,r5/1:/{Table/0-Max}] initiating a split of this range at key /Table/11 [r6]
+I170705 19:29:24.519767 140 storage/split_queue.go:93  [split,n1,s1,r6/1:/{Table/11-Max}] splitting at key /Table/12/0
+I170705 19:29:24.519814 140 storage/replica_command.go:2660  [split,n1,s1,r6/1:/{Table/11-Max}] initiating a split of this range at key /Table/12 [r7]
+I170705 19:29:24.593962 14 server/server.go:847  [n1] done ensuring all necessary migrations have run
+I170705 19:29:24.594069 14 server/server.go:849  [n1] serving sql connections
+I170705 19:29:24.596597 14 cli/start.go:411  node startup completed:
+CockroachDB node starting at 2017-07-05 19:29:24.596340283 -0400 EDT
+build:      CCL v1.0.2 @ 2017/06/15 12:58:59 (go1.8.3)
+admin:      http://localhost:8080
+sql:        postgresql://root@localhost:26257?sslmode=disable
+logs:       /home/michael57/My_Computer/cockroach-data/logs
+store[0]:   path=/home/michael57/My_Computer/cockroach-data
+status:     initialized new cluster
+clusterID:  e00f8e37-6ee8-4cf6-8e1c-262451d953ba
+nodeID:     1
+I170705 19:29:24.653630 140 storage/split_queue.go:93  [split,n1,s1,r7/1:/{Table/12-Max}] splitting at key /Table/13/0
+I170705 19:29:24.653679 140 storage/replica_command.go:2660  [split,n1,s1,r7/1:/{Table/12-Max}] initiating a split of this range at key /Table/13 [r8]
+I170705 19:29:24.703030 389 sql/event_log.go:101  [n1] Event: "node_join", target: 1, info: {Descriptor:{NodeID:1 Address:{NetworkField:tcp AddressField:localhost:26257} Attrs: Locality:} ClusterID:e00f8e37-6ee8-4cf6-8e1c-262451d953ba StartedAt:1499297363805480063 LastUp:1499297363805480063}
+I170705 19:29:24.773172 140 storage/split_queue.go:93  [split,n1,s1,r8/1:/{Table/13-Max}] splitting at key /Table/14/0
+I170705 19:29:24.773195 140 storage/replica_command.go:2660  [split,n1,s1,r8/1:/{Table/13-Max}] initiating a split of this range at key /Table/14 [r9]
+I170705 19:29:24.888634 140 storage/split_queue.go:93  [split,n1,s1,r9/1:/{Table/14-Max}] splitting at key /Table/15/0
+I170705 19:29:24.888650 140 storage/replica_command.go:2660  [split,n1,s1,r9/1:/{Table/14-Max}] initiating a split of this range at key /Table/15 [r10]
+I170705 19:29:33.806451 88 storage/store.go:3997  [n1,s1] sstables (read amplification = 0):
+I170705 19:29:33.806949 90 server/status/runtime.go:225  [n1] runtime stats: 93 MiB RSS, 124 goroutines, 14 MiB/984 KiB/22 MiB GO alloc/idle/total, 4.3 MiB/7.9 MiB CGO alloc/total, 0.00cgo/sec, 0.00/0.00 %(u/s)time, 0.00 %gc (7x)
+I170705 19:29:33.904444 100 storage/replica_proposal.go:390  [n1,s1,r3/1:/System/ts{d-e}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=1 pro=1499297373.886013005,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1499297372.805161893,0 pro=1499297363.805200048,0
+I170705 19:29:43.807139 90 server/status/runtime.go:225  [n1] runtime stats: 95 MiB RSS, 124 goroutines, 13 MiB/1.8 MiB/22 MiB GO alloc/idle/total, 4.5 MiB/8.2 MiB CGO alloc/total, 65.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:29:53.806922 90 server/status/runtime.go:225  [n1] runtime stats: 97 MiB RSS, 124 goroutines, 11 MiB/5.8 MiB/25 MiB GO alloc/idle/total, 4.6 MiB/8.2 MiB CGO alloc/total, 61.90cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:30:03.806827 90 server/status/runtime.go:225  [n1] runtime stats: 97 MiB RSS, 124 goroutines, 17 MiB/440 KiB/25 MiB GO alloc/idle/total, 4.6 MiB/8.2 MiB CGO alloc/total, 58.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:30:13.807214 90 server/status/runtime.go:225  [n1] runtime stats: 98 MiB RSS, 124 goroutines, 13 MiB/4.3 MiB/26 MiB GO alloc/idle/total, 4.6 MiB/8.2 MiB CGO alloc/total, 66.30cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:30:23.806166 89 gossip/gossip.go:448  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I170705 19:30:23.807388 90 server/status/runtime.go:225  [n1] runtime stats: 98 MiB RSS, 127 goroutines, 11 MiB/6.7 MiB/26 MiB GO alloc/idle/total, 4.6 MiB/8.2 MiB CGO alloc/total, 63.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:30:23.821200 128 storage/replica_proposal.go:390  [n1,s1,r5/1:/Table/{0-11}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=1 pro=1499297423.805393083,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1499297372.805161893,0 pro=1499297363.805200048,0
+I170705 19:30:23.821343 129 storage/replica_proposal.go:390  [n1,s1,r4/1:/{System/tse-Table/0}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=1 pro=1499297423.806688841,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1499297372.805161893,0 pro=1499297363.805200048,0
+I170705 19:30:23.840600 110 storage/replica_proposal.go:390  [n1,s1,r6/1:/Table/1{1-2}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=1 pro=1499297423.821889462,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1499297372.805161893,0 pro=1499297363.805200048,0
+I170705 19:30:23.865075 104 storage/replica_proposal.go:390  [n1,s1,r9/1:/Table/1{4-5}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=1 pro=1499297423.841047392,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1499297372.805161893,0 pro=1499297363.805200048,0
+I170705 19:30:23.891264 123 storage/replica_proposal.go:390  [n1,s1,r8/1:/Table/1{3-4}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=1 pro=1499297423.865550542,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1499297372.805161893,0 pro=1499297363.805200048,0
+I170705 19:30:23.909092 106 storage/replica_proposal.go:390  [n1,s1,r7/1:/Table/1{2-3}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=1 pro=1499297423.891634324,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1499297372.805161893,0 pro=1499297363.805200048,0
+I170705 19:30:23.917321 113 storage/replica_proposal.go:390  [n1,s1,r10/1:/{Table/15-Max}] new range lease repl=(n1,s1):1 start=0.000000000,0 epo=1 pro=1499297423.909432439,0 following repl=(n1,s1):1 start=0.000000000,0 exp=1499297372.805161893,0 pro=1499297363.805200048,0
+I170705 19:30:33.806747 90 server/status/runtime.go:225  [n1] runtime stats: 99 MiB RSS, 124 goroutines, 17 MiB/1.3 MiB/26 MiB GO alloc/idle/total, 5.6 MiB/9.2 MiB CGO alloc/total, 85.60cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:30:43.806827 90 server/status/runtime.go:225  [n1] runtime stats: 100 MiB RSS, 124 goroutines, 13 MiB/7.1 MiB/28 MiB GO alloc/idle/total, 5.9 MiB/9.6 MiB CGO alloc/total, 58.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:30:53.807196 90 server/status/runtime.go:225  [n1] runtime stats: 101 MiB RSS, 124 goroutines, 9.1 MiB/10 MiB/28 MiB GO alloc/idle/total, 5.9 MiB/9.6 MiB CGO alloc/total, 58.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:31:03.806732 90 server/status/runtime.go:225  [n1] runtime stats: 101 MiB RSS, 124 goroutines, 15 MiB/5.0 MiB/28 MiB GO alloc/idle/total, 6.1 MiB/9.9 MiB CGO alloc/total, 66.00cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:31:13.806904 90 server/status/runtime.go:225  [n1] runtime stats: 101 MiB RSS, 124 goroutines, 12 MiB/7.6 MiB/28 MiB GO alloc/idle/total, 6.1 MiB/9.9 MiB CGO alloc/total, 58.50cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:31:23.805847 89 gossip/gossip.go:448  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I170705 19:31:23.807128 90 server/status/runtime.go:225  [n1] runtime stats: 101 MiB RSS, 125 goroutines, 18 MiB/2.3 MiB/28 MiB GO alloc/idle/total, 6.1 MiB/10 MiB CGO alloc/total, 62.90cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:31:33.806749 90 server/status/runtime.go:225  [n1] runtime stats: 101 MiB RSS, 124 goroutines, 14 MiB/5.3 MiB/28 MiB GO alloc/idle/total, 6.2 MiB/10 MiB CGO alloc/total, 59.90cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:31:43.807356 90 server/status/runtime.go:225  [n1] runtime stats: 101 MiB RSS, 124 goroutines, 12 MiB/8.2 MiB/28 MiB GO alloc/idle/total, 7.3 MiB/11 MiB CGO alloc/total, 66.30cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:31:53.807101 90 server/status/runtime.go:225  [n1] runtime stats: 101 MiB RSS, 124 goroutines, 17 MiB/2.9 MiB/28 MiB GO alloc/idle/total, 7.3 MiB/11 MiB CGO alloc/total, 62.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:32:03.806823 90 server/status/runtime.go:225  [n1] runtime stats: 103 MiB RSS, 124 goroutines, 12 MiB/8.2 MiB/29 MiB GO alloc/idle/total, 7.3 MiB/11 MiB CGO alloc/total, 58.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:32:13.807138 90 server/status/runtime.go:225  [n1] runtime stats: 103 MiB RSS, 124 goroutines, 18 MiB/3.2 MiB/29 MiB GO alloc/idle/total, 7.3 MiB/12 MiB CGO alloc/total, 62.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:32:23.805795 89 gossip/gossip.go:448  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I170705 19:32:23.806571 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 125 goroutines, 14 MiB/6.2 MiB/29 MiB GO alloc/idle/total, 7.4 MiB/12 MiB CGO alloc/total, 93.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:32:33.806672 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 124 goroutines, 11 MiB/9.2 MiB/29 MiB GO alloc/idle/total, 7.4 MiB/12 MiB CGO alloc/total, 67.60cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:32:43.806654 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 124 goroutines, 17 MiB/4.0 MiB/29 MiB GO alloc/idle/total, 7.6 MiB/12 MiB CGO alloc/total, 58.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:32:53.806830 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 124 goroutines, 12 MiB/8.2 MiB/29 MiB GO alloc/idle/total, 7.6 MiB/12 MiB CGO alloc/total, 58.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:33:03.807046 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 124 goroutines, 18 MiB/3.2 MiB/29 MiB GO alloc/idle/total, 8.6 MiB/13 MiB CGO alloc/total, 61.90cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:33:13.807257 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 124 goroutines, 14 MiB/6.4 MiB/29 MiB GO alloc/idle/total, 8.8 MiB/14 MiB CGO alloc/total, 66.00cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:33:23.806152 89 gossip/gossip.go:448  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I170705 19:33:23.807481 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 126 goroutines, 10 MiB/10 MiB/29 MiB GO alloc/idle/total, 8.7 MiB/14 MiB CGO alloc/total, 60.10cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:33:33.807143 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 124 goroutines, 16 MiB/4.9 MiB/29 MiB GO alloc/idle/total, 8.8 MiB/14 MiB CGO alloc/total, 64.40cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:33:43.806880 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 124 goroutines, 13 MiB/7.7 MiB/29 MiB GO alloc/idle/total, 8.7 MiB/14 MiB CGO alloc/total, 61.20cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:33:53.806831 90 server/status/runtime.go:225  [n1] runtime stats: 105 MiB RSS, 124 goroutines, 18 MiB/2.7 MiB/29 MiB GO alloc/idle/total, 8.7 MiB/14 MiB CGO alloc/total, 58.80cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:34:03.806864 90 server/status/runtime.go:225  [n1] runtime stats: 107 MiB RSS, 124 goroutines, 14 MiB/6.4 MiB/29 MiB GO alloc/idle/total, 8.8 MiB/14 MiB CGO alloc/total, 65.80cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170705 19:34:13.807342 90 server/status/runtime.go:225  [n1] runtime stats: 107 MiB RSS, 124 goroutines, 20 MiB/1.3 MiB/29 MiB GO alloc/idle/total, 8.8 MiB/14 MiB CGO alloc/total, 62.20cgo/sec, 0.01/0.00 %(u/s)time, 0.00 %gc (0x)
+I170705 19:34:20.595760 1 cli/start.go:446  received signal 'terminated'
+I170705 19:34:20.612307 1 cli/start.go:471  initiating graceful shutdown of server
+I170705 19:34:20.624326 216 vendor/google.golang.org/grpc/transport/http2_server.go:323  transport: http2Server.HandleStreams failed to read frame: read tcp 127.0.0.1:26257->127.0.0.1:38986: use of closed network connection
+I170705 19:34:20.632467 849 storage/engine/rocksdb.go:447  closing rocksdb instance at "/home/michael57/My_Computer/cockroach-data"
+I170705 19:34:20.652805 1 cli/start.go:503  server drained and shutdown completed

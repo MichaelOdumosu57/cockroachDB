@@ -1,0 +1,41 @@
+I170705 19:32:28.500774 1 util/log/clog.go:1011  [config] file created at: 2017/07/05 19:32:28
+I170705 19:32:28.500774 1 util/log/clog.go:1011  [config] running on machine: demeter
+I170705 19:32:28.500774 1 util/log/clog.go:1011  [config] binary: CockroachDB CCL v1.0.2 (linux amd64, built 2017/06/15 12:58:59, go1.8.3)
+I170705 19:32:28.500774 1 util/log/clog.go:1011  [config] arguments: [cockroach start --insecure --host=localhost]
+I170705 19:32:28.500774 1 util/log/clog.go:1011  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+W170705 19:32:28.500773 1 cli/start.go:587  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access localhost.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/secure-a-cluster.html
+I170705 19:32:28.501058 1 cli/start.go:593  CockroachDB CCL v1.0.2 (linux amd64, built 2017/06/15 12:58:59, go1.8.3)
+I170705 19:32:28.601424 1 server/config.go:281  available memory from cgroups (8.0 EiB) exceeds system memory 16 GiB, using system memory
+I170705 19:32:28.601441 1 server/config.go:375  system total memory: 16 GiB
+I170705 19:32:28.601500 1 server/config.go:377  server configuration:
+max offset                   500ms
+cache size                   3.9 GiB
+SQL memory pool size         3.9 GiB
+scan interval                10m0s
+scan max idle time           200ms
+consistency check interval   24h0m0s
+metrics sample interval      10s
+time until store dead        5m0s
+send next timeout            500ms
+event log enabled            true
+linearizable                 false
+I170705 19:32:28.601595 11 cli/start.go:340  starting cockroach node
+E170705 19:32:28.616066 1 cli/error.go:68  unable to connect or connection lost.
+
+Please check the address and credentials such as certificates (if attempting to
+communicate with a secure cluster).
+
+cockroach server exited with error: listen tcp 127.0.0.1:26257: bind: address already in use
+Error: unable to connect or connection lost.
+
+Please check the address and credentials such as certificates (if attempting to
+communicate with a secure cluster).
+
+cockroach server exited with error: listen tcp 127.0.0.1:26257: bind: address already in use
