@@ -1,0 +1,86 @@
+Scaling is important so you can make better decisions at an earlier level
+
+CockroachDB is scale & consistency structured in tables
+
+https://www.cockroachlabs.com/docs/stable/install-cockroachdb.html
+
+to install
+        Download the CockroachDB v1.0.2 archive for Linux.
+        tar xfz cockroach-v1.0.2.linux-amd64.tgz
+        cp -i cockroach-v1.0.2.linux-amd64/cockroach /usr/local/bin
+
+ps aux -- tells you all processes running on linux
+ps aux | grep [process] working on process
+
+kill [1st number] kills the process if you do not know the package end command
+
+to get it started
+
+    local computer
+        cockroach start --insecure --host=localhost --background
+
+    external computer (connected to another computer)
+        cockroach start --insecure --host=0.0.0.0 --background
+
+then run to create sample data
+    cockroach gen example-data startrek | cockroach sql --insecure
+
+
+run this code to place you in a program to respond to SQL Queries
+    --its a cockroach SQL shell
+    cockroach sql --insecure
+
+    to exit
+    \q
+
+
+
+to get the inter face going
+    got to that mlh folder and make sure pg and express is installed
+    then run
+    node server.js
+
+
+adding another node to the cluster
+
+    cockroach start --insecure --host=[local or external] --background --join=[local or external]:[same number referring to database] --store=mlh-node[next_number] --port=[new port if not in use] --http-port=[different port]
+
+    make sure its not the same node or you have to delete the node in the folder
+
+change data while cluster is down
+
+    cockroach quit --insecure --port=[where one of your clusters are]
+    
+        in the admin page on the browser you will see a yellow dot neckt to the knocked out node
+        if it is off long enough if will turn red
+
+    then
+        
+        cockroach sql --insecure --port [a live node]
+        
+        in shell
+            UPDATE startrek.quotes SET characters = '[a person name]'
+    
+    to bring back the dead node
+        cockroach start --insecure --host=[local or external] --background --join=[local or external]:[same number referring to database] --store=mlh-node[next_number] --port=[new port if not in use] --http-port=[different port
+
+
+    to see the updated node
+        cockroach sql --insecure --port [the revived  node]
+
+            in sql shell
+                SELECT * FROM startrek.quotes ORDER BY RANDOM() LIMIT 1;
+                
+        
+
+close the server and kill the process the runs the nodes, delete the additional nodes from the mlh ... folder
+
+
+
+so cockroach manipulates data across all nodes
+when a node is down , the other can carry the job because it the same database so same database framework
+
+when a node comes back online, it gets updated with the new infomation to get back in taskflow
+
+
+to continue https://www.cockroachlabs.com/docs/stable/

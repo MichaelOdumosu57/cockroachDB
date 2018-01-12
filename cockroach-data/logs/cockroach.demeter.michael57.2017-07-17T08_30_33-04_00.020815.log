@@ -525,3 +525,43 @@ I170717 09:06:53.808951 114 server/status/runtime.go:225  [n1] runtime stats: 19
 I170717 09:07:03.808878 114 server/status/runtime.go:225  [n1] runtime stats: 193 MiB RSS, 145 goroutines, 25 MiB/16 MiB/51 MiB GO alloc/idle/total, 42 MiB/70 MiB CGO alloc/total, 573.91cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
 I170717 09:07:13.808912 114 server/status/runtime.go:225  [n1] runtime stats: 193 MiB RSS, 145 goroutines, 27 MiB/14 MiB/51 MiB GO alloc/idle/total, 42 MiB/70 MiB CGO alloc/total, 569.89cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
 I170717 09:07:23.808121 114 server/status/runtime.go:225  [n1] runtime stats: 194 MiB RSS, 145 goroutines, 15 MiB/25 MiB/51 MiB GO alloc/idle/total, 43 MiB/71 MiB CGO alloc/total, 383.62cgo/sec, 0.03/0.00 %(u/s)time, 0.00 %gc (2x)
+I170717 09:07:33.807686 16 gossip/gossip.go:448  [n1] gossip status (ok, 3 nodes)
+gossip client (0/3 cur/max conns)
+gossip server (2/3 cur/max conns, infos 5830/36 sent/received, bytes 612192B/7116B sent/received)
+  4: 0.0.0.0:26258 (9m40s)
+  5: 0.0.0.0:26259 (18m39s)
+I170717 09:07:33.808494 114 server/status/runtime.go:225  [n1] runtime stats: 194 MiB RSS, 145 goroutines, 18 MiB/22 MiB/51 MiB GO alloc/idle/total, 43 MiB/71 MiB CGO alloc/total, 566.68cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:07:43.808213 114 server/status/runtime.go:225  [n1] runtime stats: 195 MiB RSS, 145 goroutines, 22 MiB/19 MiB/51 MiB GO alloc/idle/total, 44 MiB/73 MiB CGO alloc/total, 548.51cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:07:53.808379 114 server/status/runtime.go:225  [n1] runtime stats: 195 MiB RSS, 145 goroutines, 26 MiB/16 MiB/51 MiB GO alloc/idle/total, 44 MiB/73 MiB CGO alloc/total, 397.19cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:08:03.808593 114 server/status/runtime.go:225  [n1] runtime stats: 196 MiB RSS, 145 goroutines, 25 MiB/16 MiB/51 MiB GO alloc/idle/total, 44 MiB/73 MiB CGO alloc/total, 542.99cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I170717 09:08:13.808824 114 server/status/runtime.go:225  [n1] runtime stats: 196 MiB RSS, 145 goroutines, 23 MiB/18 MiB/51 MiB GO alloc/idle/total, 45 MiB/73 MiB CGO alloc/total, 546.59cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:08:23.808347 114 server/status/runtime.go:225  [n1] runtime stats: 196 MiB RSS, 145 goroutines, 22 MiB/19 MiB/51 MiB GO alloc/idle/total, 45 MiB/73 MiB CGO alloc/total, 487.22cgo/sec, 0.02/0.01 %(u/s)time, 0.00 %gc (1x)
+I170717 09:08:33.807946 16 gossip/gossip.go:448  [n1] gossip status (ok, 3 nodes)
+gossip client (0/3 cur/max conns)
+gossip server (2/3 cur/max conns, infos 6475/36 sent/received, bytes 672435B/7116B sent/received)
+  4: 0.0.0.0:26258 (10m40s)
+  5: 0.0.0.0:26259 (19m39s)
+I170717 09:08:33.808809 114 server/status/runtime.go:225  [n1] runtime stats: 199 MiB RSS, 145 goroutines, 29 MiB/12 MiB/51 MiB GO alloc/idle/total, 49 MiB/76 MiB CGO alloc/total, 496.59cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:08:43.808044 114 server/status/runtime.go:225  [n1] runtime stats: 199 MiB RSS, 145 goroutines, 13 MiB/27 MiB/51 MiB GO alloc/idle/total, 49 MiB/76 MiB CGO alloc/total, 482.92cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (2x)
+I170717 09:08:53.808486 114 server/status/runtime.go:225  [n1] runtime stats: 199 MiB RSS, 145 goroutines, 18 MiB/23 MiB/51 MiB GO alloc/idle/total, 49 MiB/77 MiB CGO alloc/total, 580.78cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:09:03.809051 114 server/status/runtime.go:225  [n1] runtime stats: 199 MiB RSS, 145 goroutines, 21 MiB/20 MiB/51 MiB GO alloc/idle/total, 50 MiB/78 MiB CGO alloc/total, 455.18cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:09:13.808636 114 server/status/runtime.go:225  [n1] runtime stats: 200 MiB RSS, 145 goroutines, 12 MiB/28 MiB/51 MiB GO alloc/idle/total, 50 MiB/78 MiB CGO alloc/total, 551.02cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (2x)
+I170717 09:09:23.808488 114 server/status/runtime.go:225  [n1] runtime stats: 200 MiB RSS, 145 goroutines, 14 MiB/26 MiB/51 MiB GO alloc/idle/total, 50 MiB/78 MiB CGO alloc/total, 455.30cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:09:33.807872 16 gossip/gossip.go:448  [n1] gossip status (ok, 3 nodes)
+gossip client (0/3 cur/max conns)
+gossip server (2/3 cur/max conns, infos 7092/36 sent/received, bytes 729458B/7116B sent/received)
+  4: 0.0.0.0:26258 (11m40s)
+  5: 0.0.0.0:26259 (20m39s)
+I170717 09:09:33.808661 114 server/status/runtime.go:225  [n1] runtime stats: 202 MiB RSS, 144 goroutines, 18 MiB/23 MiB/51 MiB GO alloc/idle/total, 51 MiB/79 MiB CGO alloc/total, 416.99cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:09:43.808458 114 server/status/runtime.go:225  [n1] runtime stats: 202 MiB RSS, 144 goroutines, 19 MiB/22 MiB/51 MiB GO alloc/idle/total, 51 MiB/79 MiB CGO alloc/total, 506.51cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:09:53.808784 114 server/status/runtime.go:225  [n1] runtime stats: 202 MiB RSS, 144 goroutines, 20 MiB/21 MiB/51 MiB GO alloc/idle/total, 52 MiB/79 MiB CGO alloc/total, 502.59cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:10:03.808689 114 server/status/runtime.go:225  [n1] runtime stats: 202 MiB RSS, 144 goroutines, 20 MiB/21 MiB/51 MiB GO alloc/idle/total, 52 MiB/79 MiB CGO alloc/total, 442.20cgo/sec, 0.02/0.00 %(u/s)time, 0.00 %gc (1x)
+I170717 09:10:08.758718 1 cli/start.go:446  received signal 'terminated'
+I170717 09:10:08.769312 1 cli/start.go:471  initiating graceful shutdown of server
+I170717 09:10:08.851013 10606 vendor/google.golang.org/grpc/transport/http2_client.go:1231  transport: http2Client.notifyError got notified that the client transport was broken EOF.
+I170717 09:10:08.862556 225 vendor/google.golang.org/grpc/clientconn.go:806  grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: dial tcp 0.0.0.0:26259: getsockopt: connection refused"; Reconnecting to {0.0.0.0:26259 <nil>}
+I170717 09:10:08.972549 103 vendor/google.golang.org/grpc/transport/http2_server.go:323  transport: http2Server.HandleStreams failed to read frame: read tcp 127.0.0.1:26257->127.0.0.1:51212: use of closed network connection
+I170717 09:10:08.980281 225 vendor/google.golang.org/grpc/clientconn.go:906  grpc: addrConn.transportMonitor exits due to: context canceled
+I170717 09:10:08.985420 13264 vendor/google.golang.org/grpc/transport/http2_server.go:323  transport: http2Server.HandleStreams failed to read frame: read tcp 127.0.0.1:26257->127.0.0.1:56506: use of closed network connection
+I170717 09:10:08.993169 17188 storage/engine/rocksdb.go:447  closing rocksdb instance at "/home/michael57/My_Computer/cockroach/cockroach-data"
+I170717 09:10:09.007405 1 cli/start.go:503  server drained and shutdown completed
