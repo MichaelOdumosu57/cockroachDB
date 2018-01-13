@@ -9,6 +9,8 @@ to install
         tar xfz cockroach-v1.0.2.linux-amd64.tgz
         cp -i cockroach-v1.0.2.linux-amd64/cockroach /usr/local/bin
 
+        //seems to be gone now
+
 ps aux -- tells you all processes running on linux
 ps aux | grep [process] working on process
 
